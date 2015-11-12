@@ -3,7 +3,7 @@
 debug = {{ faf_web_debug }}
 proxy_setup = {{ faf_web_proxy_setup }}
 secret_key = {{ faf_web_secret_key }}
-{% if webfaf_on_root %}
+{% if faf_web_on_root %}
 url = https://{{ domain }}/
 {% else %}
 url = https://{{ domain }}/faf/
