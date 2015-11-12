@@ -84,8 +84,8 @@ faf_web_secret_key: not_a_secret
 # functionality checking     #
 ##############################
 
-faf_check: true
-faf_check_web: true
+faf_check: false
+faf_check_web: false
 
 ##############################
 # faf packages configuration #
