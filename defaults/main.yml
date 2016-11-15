@@ -11,9 +11,6 @@ faf_first_time_setup: false
 # (will wipe Postgre's data dir and re-create from scratch)
 faf_recreate_database: false
 
-# configure to use custom repository for faf's packages
-faf_custom_repository_url: http://192.168.122.1:8001/
-
 # update faf packages
 faf_update: true
 
