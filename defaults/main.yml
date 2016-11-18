@@ -112,6 +112,8 @@ faf_action_packages:
   - faf-action-add-compat-hashes
   - faf-action-arch
   - faf-action-archive-reports
+  - faf-action-assign-release-to-builds
+  - faf-action-attach-centos-bugs
   - faf-action-c2p
   - faf-action-cleanup-task-results
   - faf-action-create-problems
