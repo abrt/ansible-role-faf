@@ -1,6 +1,7 @@
 ---
 # SMTP server to use
 smtp_server: localhost
+smtp_port: 25
 
 # connectstring to use for faf web & storage in format:
 # driver://user:password@host:port/database
