@@ -1,4 +1,7 @@
 ---
+# SMTP server to use
+smtp_server: localhost
+
 # connectstring to use for faf web & storage in format:
 # driver://user:password@host:port/database
 faf_db_connectstring: postgresql:///faf
