@@ -1,4 +1,7 @@
 ---
+# SMTP server to use
+smtp_server: localhost
+
 # connectstring to use for faf web & storage in format:
 # driver://user:password@host:port/database
 faf_db_connectstring: postgresql:///faf
@@ -10,9 +13,6 @@ faf_first_time_setup: false
 # dangerous, delete and re-create PostgreSQL database
 # (will wipe Postgre's data dir and re-create from scratch)
 faf_recreate_database: false
-
-# configure to use custom repository for faf's packages
-faf_custom_repository_url: http://192.168.122.1:8001/
 
 # update faf packages
 faf_update: true
@@ -115,6 +115,8 @@ faf_action_packages:
   - faf-action-add-compat-hashes
   - faf-action-arch
   - faf-action-archive-reports
+  - faf-action-assign-release-to-builds
+  - faf-action-attach-centos-bugs
   - faf-action-c2p
   - faf-action-cleanup-task-results
   - faf-action-create-problems

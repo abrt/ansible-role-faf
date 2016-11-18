@@ -4,8 +4,8 @@
 
 - name: faf
   shell: faf {{ item }}
-  sudo: yes
-  sudo_user: faf
+  become: yes
+  become_user: faf
   with_items:
     - "releaseadd -o fedora --opsys-release 42"
     - "releaselist | grep 'Fedora 42'"
@@ -17,8 +17,8 @@
 
 - name: faf
   shell: faf {{ item }}
-  sudo: yes
-  sudo_user: faf
+  become: yes
+  become_user: faf
   with_items:
     - "save-reports -v"
     - "create-problems -v"
