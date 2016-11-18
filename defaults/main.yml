@@ -6,6 +6,9 @@ smtp_port: 25
 # domain of web service as seen from internet
 domain: example.org
 
+# default port for memcached
+memcached_port: 11211
+
 # connectstring to use for faf web & storage in format:
 # driver://user:password@host:port/database
 faf_db_connectstring: postgresql:///faf
