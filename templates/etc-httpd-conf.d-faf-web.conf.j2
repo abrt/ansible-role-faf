@@ -3,7 +3,6 @@
 WSGIPythonOptimize 1
 WSGISocketPrefix /var/spool/faf/wsgi
 WSGIDaemonProcess faf user=faf group=faf processes=3 threads=5
-WSGIProcessGroup faf
 
 {% if ansible_os_family == 'RedHat' and ansible_distribution_major_version == '6' %}
   {% set python = 'python2.6' %}
@@ -11,7 +10,7 @@ WSGIProcessGroup faf
   {% set python = 'python2.7' %}
 {% endif %}
 
-WSGIScriptAlias / /usr/lib/{{ python }}/site-packages/webfaf/hub.wsgi
+WSGIScriptAlias / /usr/lib/{{ python }}/site-packages/webfaf/hub.wsgi process-group=faf application-group=%{GLOBAL}
 
 <Location />
     <IfModule mod_authz_core.c>
