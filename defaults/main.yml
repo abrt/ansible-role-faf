@@ -30,6 +30,9 @@ faf_force_reinstall: false
 # run faf's database migrations
 faf_migrate_db: true
 
+# set up cron jobs for faf
+faf_cron_jobs: true
+
 faf_admin_mail: root@localhost
 
 ###########################
