@@ -16,6 +16,10 @@
   when: faf_migrate_db
   tags: [faf, faf_migrate_db]
 
+- include: cron.yml
+  when: faf_cron_jobs
+  tags: [faf, config]
+
 - include: web.yml
   when: faf_with_web
   tags: [faf, faf_web]
