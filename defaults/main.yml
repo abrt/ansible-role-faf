@@ -125,6 +125,7 @@ faf_action_packages:
   - faf-action-c2p
   - faf-action-cleanup-task-results
   - faf-action-create-problems
+  - faf-action-delete-invalid-ureports
   - faf-action-external-faf
   - faf-action-external-faf-clone-bz
   - faf-action-find-components
