@@ -4,7 +4,7 @@
   cron:
     name: "faf save-reports"
     user: faf
-    job: "faf save-reports >> /var/log/faf/save-reports.log 2>&1"
+    job: "faf save-reports --speedup >> /var/log/faf/save-reports.log 2>&1"
     minute: "*/5"
     state: present
   become: yes
