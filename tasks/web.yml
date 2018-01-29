@@ -11,11 +11,11 @@
   package : name={{ item }} state=latest
   with_items: "{{ faf_web_packages }}"
 
-- include: celery.yml
+- import_tasks: celery.yml
   when: faf_with_celery
 
 - name: install faf web symboltransfer packages
-  package: pkg={{ item }} state=installed
+  package: name={{ item }} state=present
   with_items: "{{ faf_web_symboltransfer_packages }}"
   when: faf_with_symboltransfer
 
