@@ -1,5 +1,5 @@
 - name: install faf web celery packages
-  package: pkg={{ item }} state=installed
+  package: name={{ item }} state=installed
   with_items: "{{ faf_web_celery_packages }}"
   tags:
   - packages
