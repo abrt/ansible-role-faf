@@ -1,11 +1,11 @@
 - name: install faf web celery packages
-  package: name={{ item }} state=installed
+  package: name={{ item }} state=present
   with_items: "{{ faf_web_celery_packages }}"
   tags:
   - packages
 
 - name: install redis package
-  package : name={{ item }} state=installed
+  package : name={{ item }} state=present
   with_items:
   - redis
   - python-redis
