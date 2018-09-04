@@ -1,7 +1,12 @@
 ---
 
-- name: enable Copr repo
+- name: enable Copr repo for RHEL
   copy: src=group_abrt-faf-el7-epel-7.repo dest=/etc/yum.repos.d/
+  when: ansible_distribution == 'RedHat'
+
+- name: enable Copr repo for Fedora
+  copy: src=group_abrt-faf-el7-fedora.repo dest=/etc/yum.repos.d/
+  when: ansible_distribution == 'Fedora'
 
 - name: erase faf packages
   package: name="faf-*" state=absent
