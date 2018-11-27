@@ -30,3 +30,6 @@
 - import_tasks: check_web.yml
   when: faf_check_web
   tags: [faf, faf_check_web]
+
+- import_tasks: cleanup.yml
+  tags: [faf, cleanup]
