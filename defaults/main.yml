@@ -189,3 +189,11 @@ faf_web_celery_packages:
 
 faf_web_symboltransfer_packages:
   - faf-blueprint-symbol-transfer
+
+###############
+# EOLed Opsys #
+###############
+
+eol_opsys:
+  - { opsys: "fedora", release: "27" }
+  - { opsys: "fedora", release: "26" }
