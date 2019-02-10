@@ -120,7 +120,7 @@ faf_check_web: false
 faf_packages:
   - faf
   - faf-migrations
-  - faf-yum
+  - faf-dnf
 
 faf_problem_packages:
   - faf-problem-coredump
