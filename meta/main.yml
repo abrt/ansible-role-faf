@@ -3,16 +3,15 @@ galaxy_info:
   author: "ABRT team"
   company: Red Hat
   license: BSD
-  min_ansible_version: 1.8
+  min_ansible_version: 2.4
   platforms:
    - name: EL
      versions:
-      - 7
-      - 6
+      - 8
    - name: Fedora
      versions:
-      - 28
       - 29
+      - 30
   categories:
    - web
 dependencies: []
