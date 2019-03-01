@@ -195,5 +195,4 @@ faf_web_symboltransfer_packages:
 ###############
 
 eol_opsys:
-  - { opsys: "fedora", release: "27" }
-  - { opsys: "fedora", release: "26" }
+  - { opsys: "", release: "" }
