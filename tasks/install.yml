@@ -14,36 +14,36 @@
 
 - name: install core faf packages
   package: name={{ item }} state=present
-  with_items: "{{ faf_packages }}"
+  loop: "{{ faf_packages }}"
 
 - name: install faf problem packages
   package: name={{ item }} state=present
-  with_items: "{{ faf_problem_packages }}"
+  loop: "{{ faf_problem_packages }}"
 
 - name: install faf opsys packages
   package: name={{ item }} state=present
-  with_items: "{{ faf_opsys_packages }}"
+  loop: "{{ faf_opsys_packages }}"
 
 - name: install faf action packages
   package: name={{ item }} state=present
-  with_items: "{{ faf_action_packages }}"
+  loop: "{{ faf_action_packages }}"
 
 - name: install faf bugtracker packages
   package: name={{ item }} state=present
-  with_items: "{{ faf_bugtracker_packages }}"
+  loop: "{{ faf_bugtracker_packages }}"
   when: faf_with_bugtrackers
 
 - name: install faf celery packages
   package: name={{ item }} state=present
-  with_items: "{{ faf_celery_packages }}"
+  loop: "{{ faf_celery_packages }}"
   when: faf_with_celery
 
 - name: install faf fedmsg packages
   package: name={{ item }} state=present
-  with_items: "{{ faf_fedmsg_packages }}"
+  loop: "{{ faf_fedmsg_packages }}"
   when: faf_with_fedmsg
 
 - name: install faf solutionfinder packages
   package: name={{ item }} state=present
-  with_items: "{{ faf_solutionfinder_packages }}"
+  loop: "{{ faf_solutionfinder_packages }}"
   when: faf_with_solutionfinders

@@ -1,13 +1,13 @@
 ---
 - name: remove EOLed opsys
-  command: faf releasemod -o "{{item|selectattr("opsys")}}" --opsys-release "{{item|selectattr("release")}}" -s EOL
-  with_items: '{{eol_opsys:|default([], true)|list}}'
+  command: faf releasemod -o "{{ item.opsys }}" --opsys-release "{{ item.release }}" -s EOL
+  loop: '{{eol_opsys|default([], true)}}'
   become: yes
   become_user: faf
 
 - name: remove EOLed packages
-  command: faf cleanup-packages "{{item|selectattr("opsys")}}" "{{item|selectattr("release")}}"
-  with_items: '{{eol_opsys:|default([], true)|list}}'
+  command: faf cleanup-packages "{{ item.opsys }}" "{{ item.release }}"
+  loop: '{{eol_opsys|default([], true)}}'
   become: yes
   become_user: faf
 
