@@ -9,14 +9,14 @@
 
 - name: install faf-webui packages
   package : name={{ item }} state=latest
-  with_items: "{{ faf_web_packages }}"
+  loop: "{{ faf_web_packages }}"
 
 - import_tasks: celery.yml
   when: faf_with_celery
 
 - name: install faf web symboltransfer packages
   package: name={{ item }} state=present
-  with_items: "{{ faf_web_symboltransfer_packages }}"
+  loop: "{{ faf_web_symboltransfer_packages }}"
   when: faf_with_symboltransfer
 
 - name: provide /etc/faf/plugins/web.conf

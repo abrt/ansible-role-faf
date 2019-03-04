@@ -6,7 +6,7 @@
   shell: faf {{ item }}
   become: yes
   become_user: faf
-  with_items:
+  loop:
     - "releaseadd -o fedora --opsys-release 42"
     - "releaselist | grep 'Fedora 42'"
     - "compadd -o fedora --opsys-release 42 meta_faf"
@@ -19,6 +19,6 @@
   shell: faf {{ item }}
   become: yes
   become_user: faf
-  with_items:
+  loop:
     - "save-reports -v"
     - "create-problems -v"
