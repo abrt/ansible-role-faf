@@ -58,8 +58,8 @@ faf_with_web: true
 # the URL can be also with /path part (e.g. example-faf.org/faf)
 faf_server_name: "example-faf.org"
 
-faf_web_brand_title: "FAF"
-faf_web_brand_subtitle: "Fedora Analysis Framework"
+faf_web_brand_title: "ABRT"
+faf_web_brand_subtitle: "Analysis"
 
 # perms
 faf_web_everyone_is_admin: false
