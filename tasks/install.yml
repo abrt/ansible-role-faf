@@ -5,7 +5,7 @@
   when: ansible_distribution == 'RedHat'
 
 - name: enable Copr repo for Fedora
-  copy: src=group_abrt-faf-el7-fedora.repo dest=/etc/yum.repos.d/
+  copy: src=group_abrt-faf-el8-fedora.repo dest=/etc/yum.repos.d/
   when: ansible_distribution == 'Fedora'
 
 - name: erase faf packages
