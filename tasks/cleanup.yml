@@ -10,3 +10,8 @@
   loop: "{{eol_opsys|selectattr('opsys')|selectattr('release')|list}}"
   become: yes
   become_user: faf
+
+- name: remove unassigned packages
+  command: faf cleanup-unassigned -f
+  become: yes
+  become_user: faf
