@@ -75,3 +75,40 @@
     minute: 15
     hour: "*/3"
     state: present
+
+- name: cron pull-releases
+  cron:
+    name: "faf pull-releases {{ item }}"
+    user: faf
+    job: "faf pull-releases -o {{ item }} >> /var/log/faf/pull-releases.log 2>&1"
+    minute: 55
+    hour: 0
+    state: present
+  loop: "{{ faf_opsys_list }}"
+
+- name: cron pull-components
+  cron:
+    name: "faf pull-components {{ item }}"
+    user: faf
+    job: "faf pull-components -o {{ item }} >> /var/log/faf/pull-components.log 2>&1"
+    minute: 55
+    hour: 2
+    state: present
+  loop: "{{ faf_opsys_list }}"
+
+- name: cron - faf find-components
+  cron:
+    name: "cron for faf find-components -o {{ item }}"
+    user: faf
+    job: "faf find-components -o {{ item }} >> /var/log/faf/find-components.log 2>&1"
+    special_time: daily
+    state: present
+  loop: "{{ faf_opsys_list }}"
+
+- name: cron - faf match-unknown-packages
+  cron:
+    name: "cron for faf match-unknown-packages"
+    user: faf
+    job: "faf match-unknown-packages >> /var/log/faf/match-unknown-packages.log 2>&1"
+    special_time: daily
+    state: present

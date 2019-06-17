@@ -147,6 +147,13 @@ faf_check: false
 faf_check_web: false
 
 ##############################
+# faf cron configuration     #
+##############################
+
+faf_opsys_list:
+  - fedora
+
+##############################
 # faf packages configuration #
 ##############################
 #
