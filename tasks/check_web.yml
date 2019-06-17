@@ -11,9 +11,9 @@
     validate_certs=no
   register: uri_res
 
-- fail: msg="{{ main_url }} doesn't contain 'FAF' string"
+- fail: msg="{{ main_url }} doesn't contain 'ABRT' string"
   when:
-    "'FAF' not in uri_res.content"
+    "'ABRT' not in uri_res.content"
 
 - name: fetch problems
   local_action: uri url={{ problems_url }}
