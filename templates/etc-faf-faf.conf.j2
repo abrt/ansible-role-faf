@@ -4,9 +4,9 @@
 # FAF_CONFIG_FILE environment variable.
 
 [Main]
-PluginsDir = /etc/faf/plugins/
-TemplatesDir = /etc/faf/templates/
-AutoEnablePlugins = False
+PluginsDir = {{ faf_plugins_dir }}
+TemplatesDir = {{ faf_templates_dir }}
+AutoEnablePlugins = {{ faf_autoenableplugins|bool }}
 
 [Storage]
 DBUser = {{ faf_db_user }}
