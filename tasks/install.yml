@@ -10,7 +10,7 @@
 
 - name: erase faf packages
   package: name="faf-*" state=absent
-  when: faf_force_reinstall
+  when: faf_force_reinstall|bool
 
 - name: install core faf packages
   package: name="{{ faf_packages }}" state=present
@@ -26,16 +26,16 @@
 
 - name: install faf bugtracker packages
   package: name="{{ faf_bugtracker_packages }}" state=present
-  when: faf_with_bugtrackers
+  when: faf_with_bugtrackers|bool
 
 - name: install faf celery packages
   package: name="{{ faf_celery_packages }}" state=present
-  when: faf_with_celery
+  when: faf_with_celery|bool
 
 - name: install faf fedmsg packages
   package: name="{{ faf_fedmsg_packages }}" state=present
-  when: faf_with_fedmsg
+  when: faf_with_fedmsg|bool
 
 - name: install faf solutionfinder packages
   package: name="{{ faf_solutionfinder_packages }}" state=present
-  when: faf_with_solutionfinders
+  when: faf_with_solutionfinders|bool

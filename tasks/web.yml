@@ -1,21 +1,21 @@
 
 - set_fact:
     url_suffix: ""
-  when: faf_web_on_root
+  when: faf_web_on_root|bool
 
 - set_fact:
     url_suffix: "/faf"
-  when: not faf_web_on_root
+  when: not faf_web_on_root|bool
 
 - name: install faf-webui packages
   package : name="{{ faf_web_packages }}" state=latest
 
 - import_tasks: celery.yml
-  when: faf_with_celery
+  when: faf_with_celery|bool
 
 - name: install faf web symboltransfer packages
   package: name="{{ faf_web_symboltransfer_packages }}" state=present
-  when: faf_with_symboltransfer
+  when: faf_with_symboltransfer|bool
 
 - name: provide /etc/faf/plugins/web.conf
   template: src=etc-faf-plugins-web.conf.j2
