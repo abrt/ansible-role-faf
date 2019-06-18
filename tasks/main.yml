@@ -16,7 +16,7 @@
   tags: [faf, faf_migrate_db]
 
 - import_tasks: cron.yml
-  when: faf_cron_jobs|boot
+  when: faf_cron_jobs|bool
   tags: [faf, config]
 
 - import_tasks: web.yml
