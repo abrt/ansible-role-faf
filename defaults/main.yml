@@ -182,6 +182,9 @@ faf_action_packages:
   - faf-action-assign-release-to-builds
   - faf-action-attach-centos-bugs
   - faf-action-c2p
+  - faf-action-check-repo
+  - faf-action-cleanup-packages
+  - faf-action-cleanup-unassigned
   - faf-action-cleanup-task-results
   - faf-action-create-problems
   - faf-action-delete-invalid-ureports
@@ -189,6 +192,7 @@ faf_action_packages:
   - faf-action-external-faf-clone-bz
   - faf-action-find-components
   - faf-action-find-crash-function
+  - faf-action-find-report-solution
   - faf-action-mark-probably-fixed
   - faf-action-pull-associates
   - faf-action-pull-components
@@ -197,6 +201,7 @@ faf_action_packages:
   - faf-action-repo
   - faf-action-retrace
   - faf-action-retrace-remote
+  - faf-action-sar
   - faf-action-save-reports
   - faf-action-shell
   - faf-action-stats
