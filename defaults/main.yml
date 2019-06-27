@@ -162,7 +162,7 @@ faf_opsys_list:
 faf_packages:
   - faf
   - faf-migrations
-  - faf-dnf
+  - faf-yum
 
 faf_problem_packages:
   - faf-problem-coredump
