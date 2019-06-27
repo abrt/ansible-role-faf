@@ -7,7 +7,7 @@
   package:
     name:
       - redis
-      - python3-redis
+      - python-redis
     state: present
   tags:
   - packages
