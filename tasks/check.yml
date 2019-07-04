@@ -12,8 +12,11 @@
     - "compadd -o fedora --opsys-release 42 meta_faf"
 
 - name: cpf
-  copy: src=ureport_sample dest={{ faf_spool_dir }}/reports/incoming
-    owner=faf group=faf
+  copy:
+    src: ureport_sample
+    dest: "{{ faf_spool_dir }}"/reports/incoming
+    owner: faf
+    group: faf
 
 - name: faf
   shell: faf {{ item }}
