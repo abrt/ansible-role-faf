@@ -13,7 +13,7 @@
     name: "faf create-problems-speedup with type {{ item}}"
     user: faf
     job: "faf create-problems -p {{ item }} --speedup >> /var/log/faf/create-problems.log 2>&1"
-    minute: 30
+    minute: "30"
     hour: "2"
     state: present
   loop:
@@ -28,7 +28,7 @@
     user: faf
     job: "faf create-problems -p {{ item }} >> /var/log/faf/create-problems.log 2>&1"
     day: "15"
-    minute: 30
+    minute: "30"
     hour: "14"
     state: present
   loop:
@@ -42,8 +42,8 @@
     name: "faf reposync"
     user: faf
     job: "faf reposync >> /var/log/faf/reposync.log 2>&1"
-    minute: 5
-    hour: 3
+    minute: "5"
+    hour: "3"
     state: present
 
 - name: retrace symbols
@@ -51,8 +51,8 @@
     name: "retrace symbols with type {{ item.type }}"
     user: faf
     job: "faf retrace --workers 4 -dp {{ item.type }} --max-fail-count 1 >> /var/log/faf/retrace-{{ item.type }}.log 2>&1"
-    minute: 32
-    hour: 2
+    minute: "32"
+    hour: "2"
     weekday: "{{ item.day }}"
     state: present
   loop:
@@ -80,8 +80,8 @@
     name: "faf pull-releases {{ item }}"
     user: faf
     job: "faf pull-releases -o {{ item }} >> /var/log/faf/pull-releases.log 2>&1"
-    minute: 55
-    hour: 0
+    minute: "55"
+    hour: "0"
     state: present
   loop: "{{ faf_opsys_list }}"
 
@@ -90,8 +90,8 @@
     name: "faf pull-components {{ item }}"
     user: faf
     job: "faf pull-components -o {{ item }} >> /var/log/faf/pull-components.log 2>&1"
-    minute: 55
-    hour: 2
+    minute: "55"
+    hour: "2"
     state: present
   loop: "{{ faf_opsys_list }}"
 

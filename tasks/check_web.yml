@@ -7,7 +7,7 @@
 
 - name: check main
   local_action: uri
-    url: {{ main_url }}
+    url: "{{ main_url }}"
     return_content: yes
     validate_certs: no
   register: uri_res
@@ -18,7 +18,7 @@
 
 - name: fetch problems
   local_action: uri
-    url: {{ problems_url }}
+    url: "{{ problems_url }}"
     return_content: yes
     validate_certs: no
   register: uri_res
