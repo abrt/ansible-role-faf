@@ -1,5 +1,7 @@
 - name: install faf web celery packages
-  package: name="{{ faf_web_celery_packages }}" state=present
+  package:
+    name: "{{ faf_web_celery_packages }}"
+    state: present
   tags:
   - packages
 
@@ -13,16 +15,25 @@
   - packages
 
 - name: enable redis service
-  service: name=redis state=started enabled=yes
+  service:
+    name: redis
+    state: started
+    enabled: yes
   tags:
   - service
 
 - name: enable faf-celery-worker
-  service: name=faf-celery-worker state=started enabled=yes
+  service:
+    name: faf-celery-worker
+    state: started
+    enabled: yes
   tags:
   - service
 
 - name: enable faf-celery-beat
-  service: name=faf-celery-beat state=started enabled=yes
+  service:
+    name: faf-celery-beat
+    state: started
+    enabled: yes
   tags:
   - service
