@@ -6,7 +6,8 @@
     problems_url: "https://{{ ansible_default_ipv4.address }}{{ url_suffix }}/problems/"
 
 - name: check main
-  local_action: uri
+  local_action:
+    module: uri
     url: "{{ main_url }}"
     return_content: yes
     validate_certs: no
@@ -17,7 +18,8 @@
     "'FAF' not in uri_res.content"
 
 - name: fetch problems
-  local_action: uri
+  local_action:
+    module: uri
     url: "{{ problems_url }}"
     return_content: yes
     validate_certs: no
