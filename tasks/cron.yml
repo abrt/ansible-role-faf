@@ -12,7 +12,7 @@
   cron:
     name: "faf create-problems-speedup with type {{ item }}"
     user: faf
-    job: "faf create-problems -p {{ item }} --speedup >> /var/log/faf/create-problems.log 2>&1"
+    job: "faf create-problems -p {{ item }} --speedup --report-min-count 2 >> /var/log/faf/create-problems.log 2>&1"
     minute: "30"
     hour: "2"
     state: present
