@@ -21,6 +21,7 @@
     - "kerneloops"
     - "python"
     - "ruby"
+    - "java"
 
 - name: cron create-problems
   cron:
@@ -36,6 +37,7 @@
     - "kerneloops"
     - "python"
     - "ruby"
+    - "java"
 
 - name: cron reposync
   cron:
