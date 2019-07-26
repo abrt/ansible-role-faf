@@ -13,7 +13,7 @@
     name: "faf create-problems-speedup with type {{ item}}"
     user: faf
     job: "faf create-problems -p {{ item }} --speedup --report-min-count 2 >> /var/log/faf/create-problems.log 2>&1"
-    minute: "30"
+    minute: "{{ 60 | random(seed=item) }}"
     hour: "2"
     state: present
   loop:
@@ -64,7 +64,8 @@
     name: "cron for faf find-crashfn for {{ item }}"
     user: faf
     job: "faf find-crashfn -p {{ item }}"
-    special_time: daily
+    minute: "{{ 60 | random(seed=item) }}"
+    hour: "5"
     state: present
   loop:
     - "core"
@@ -78,7 +79,7 @@
     name: "faf pull-releases {{ item }}"
     user: faf
     job: "faf pull-releases -o {{ item }} >> /var/log/faf/pull-releases.log 2>&1"
-    minute: "55"
+    minute: "5"
     hour: "0"
     state: present
   loop: "{{ faf_opsys_list }}"
@@ -88,8 +89,8 @@
     name: "faf pull-components {{ item }}"
     user: faf
     job: "faf pull-components -o {{ item }} >> /var/log/faf/pull-components.log 2>&1"
-    minute: "55"
-    hour: "2"
+    minute: "5"
+    hour: "1"
     state: present
   loop: "{{ faf_opsys_list }}"
 
@@ -98,7 +99,8 @@
     name: "cron for faf find-components -o {{ item }}"
     user: faf
     job: "faf find-components -o {{ item }} >> /var/log/faf/find-components.log 2>&1"
-    special_time: daily
+    minute: "5"
+    hour: "2"
     state: present
   loop: "{{ faf_opsys_list }}"
 
@@ -107,5 +109,6 @@
     name: "cron for faf match-unknown-packages"
     user: faf
     job: "faf match-unknown-packages >> /var/log/faf/match-unknown-packages.log 2>&1"
-    special_time: daily
+    minute: "23"
+    hour: "22"
     state: present
