@@ -110,8 +110,6 @@ faf_web_openid: true
 faf_web_openid_privileged_teams:
 # provenpackager,proventesters
 
-# [DUMPDIR]
-
 # [CACHE]
 # cache type either: memcached/simple/none
 faf_web_cache_type: memcached
